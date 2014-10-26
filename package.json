@@ -1,0 +1,17 @@
+{
+  "name": "JoshuaSHarris.com-v2",
+  "version": "0.0.0",
+  "description": "The second revision of my website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nemonocerater",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-browserify": "^0.5.0",
+    "gulp-print": "^1.1.0",
+    "gulp-rename": "^1.2.0"
+  }
+}

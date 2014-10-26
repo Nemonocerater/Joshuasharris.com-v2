@@ -1,0 +1,46 @@
+
+* {
+	-box-sizing: border-box;
+}
+
+#page {
+	width: 1000px;
+	margin: auto;
+	background-color: #fff8cc;
+}
+
+header {
+	font-size: 4em;
+}
+
+#main {
+	display: flex;
+	width: 100%;
+}
+
+#blog {
+	display: inline;
+	width: 100%;
+	background-color: #effff8;
+}
+
+aside {
+	float: right;
+	padding: 10px;
+	width: 200px;
+	background-color: #f8f8ff;
+}
+
+#recent {
+	background-color: #fff8f8;
+}
+
+#recent > a {
+	display: block;
+	padding: 5px;
+	cursor: pointer;
+}
+
+#recent > a:hover {
+	background-color: rgba(0,0,0, 0.1);
+}

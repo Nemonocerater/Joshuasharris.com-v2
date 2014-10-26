@@ -1,0 +1,21 @@
+
+Tech to use
+--------------------
+
+Angular-esque framework
+	Ember
+	Knockout
+	Handlebars
+
+Grunt or NPM for builds
+
+
+
+What to show
+--------------------
+
+Work Experience
+Side Projects
+Blog
+Pages?
+
