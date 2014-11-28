@@ -1,0 +1,138 @@
+
+<style>
+	.code {
+		position: relative;
+		padding-left: 26px;
+	}
+
+	.code-good {
+		background-color: #f0fff0;
+	}
+	.code-good:before {
+		content: "✓";
+		position: absolute;
+		top: 7px; left: 7px;
+		color: green;
+	}
+
+	.code-bad {
+		background-color: #fff0f0;
+	}
+	.code-bad:before {
+		content: "✗";
+		position: absolute;
+		top: 7px; left: 7px;
+		color: red;
+	}
+</style>
+
+
+<h2>Clash of Clans</h2>
+
+<!--
+	Gem to money ratio is good.
+		You can speed up a lot of stuff for $5.
+		Lowest gem amount is $5.
+		Generous gem gifts.
+		Not in your face about buying gems.
+	Retention is good due to the constant need to return to the game.
+	They forcefully ask you to rate the game after good events happen.
+	Battles are forgiving.
+		You don't feel like you lost everything when you lose a battle.
+			Not all of your money is available loot.
+		You get a shield after having some percentage destroyed.
+	Attacks are rewarding
+		You get extra trophies on top of the ones they lose
+		If you do good you can get bonus gold and elixir
+	There are tons of things to upgrade and do.
+		Walls
+		Rocks and Trees
+		Collectors
+		Storages
+		Town Hall
+		Defenses
+		Traps
+		Build troops
+		Attack
+		Restructure Town
+			The way you attack and the structure of the town hall make this very dynamic
+		Lots of statistics and Data
+		Achievements
+		Rewatch battles
+	There is actually a lot to do between waiting for things to build.
+	The game is EPIC
+		Numbers scale by degrees of magnitude as you level up. One minute you are happy the get 1000 gold then you aren't satisfied by 10,000.
+	
+
+
+
+	Boom Beach vs. Clash of Clans
+	=============================
+
+	
+	Boom beach
+	====
+
+	Has a world map
+	can scout out base before attacking
+	All battles happen from one direction
+	Battle ends when you destroy the headquarters.
+		Destroying the headquarters gives you all of the resources
+	Troops aren't lost unless they die.
+	There is less precision in troop placement since they can just get dropped off on the shoreline
+		But there are more ways to interact through signal flares and missles during combat.
+	You have to upgrade your radar to be able to do ANYTHING... AHHHHHH!!!!!
+	All the characters look the same
+		Clone workers building something
+		Same two tribe people jump out of every hole
+	You attack people based on the pretense that they are part of the black whatever...
+	You find treasure as you explore the map.
+		Treasure spawns over time as well.
+	The black guard attacks back against your captured islands so there is constant strife.
+	Game is based on your gold acquisition through island ownership and residences.
+	LONELY!!!!
+		"Makes a big world feel really small"
+		Don't feel like i've been attacked (only day 2 though).
+		Never attacking anyone... maybe 3 so far.
+	
+
+
+-->
+
+<p>
+	
+</p>
+
+<code class="code code-good">List&lt;Vector2&gt; l = new List&lt;Vector2&gt; ();
+</code>
+
+<code class="code code-good">List&lt;CustomObject&gt; l = new List&lt;CustomObject&gt; ();
+</code>
+
+<code class="code code-good">public class GenericObject &lt;T&gt; {
+	// ...
+}
+GenericObject&lt;Vector2&gt; o = new GenericObject&lt;Vector2&gt; ();
+</code>
+
+<code class="code code-bad">public class GenericObject &lt;T&gt; {
+	// ...
+}
+GenericObject&lt;CustomObject&gt; o = new GenericObject&lt;CustomObject&gt; ();
+</code>
+
+<p>
+	As you can see the only time that it is an issue is when you are passing
+	classes that you created into the generic spot of a different class that
+	you created.  If you are making a class that takes in generic object types
+	like a custom stack, queue, graph, factory, etc., then you will need to
+	make sure that you are only passing it standard C# or UnityEngine objects.
+	If you need to make a factory for custom objects then you need to do it the
+	old fasion way by casting the appropriate type of object.
+<p>
+
+<code class="code code-good">public class Stack {
+	public Object pop() { /* ... */ }
+}
+(SomeObject) stack.pop()
+</code>

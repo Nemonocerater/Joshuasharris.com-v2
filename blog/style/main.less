@@ -1,0 +1,67 @@
+
+@import "../../node_modules/bootstrap/less/bootstrap";
+
+* {
+	box-sizing: border-box;
+}
+
+document, body {
+	margin: 0px;
+	padding: 0px;
+}
+
+.page {
+	width: 1000px;
+	margin: auto;
+}
+
+header {
+	background-color: #fff8cc;
+
+	>h1 {
+		font-size: 2.5em;
+		padding: 20px;
+	}
+}
+
+
+#main {
+	display: flex;
+}
+
+aside {
+	float: right;
+	padding: 10px;
+	width: 300px;
+}
+
+#recent > a {
+	display: block;
+	margin-bottom: 5px;
+	padding: 5px;
+	background-color: rgba(0,0,0, 0.1);
+	cursor: pointer;
+
+	&:hover {
+		background-color: rgba(0,0,0, 0.2);
+	}
+}
+
+
+/*****************************************************
+ *   Blog Post
+ ****************/
+
+#blog {
+	display: inline;
+	width: 100%;
+	padding: 10px;
+}
+
+code {
+	display: block;
+	margin: 10px;
+	padding: 10px;
+	white-space: pre;
+	background-color: #eee;
+}

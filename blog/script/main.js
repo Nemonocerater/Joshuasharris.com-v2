@@ -1,9 +1,9 @@
 var http = require ('browser-http');
-var blogs = require ('../blogs.js');
+var blogs = require ('./blogs.js');
 
-function loadBlog (index) {
-	var blog = blogs[index];
-	http.request ('blogs/' + blog.file, { type: "GET" })
+function loadBlog (file) {
+	window.location.hash = "#/" + file;
+	http.request ('blogs/' + file + ".html", { type: "GET" })
 		.then (renderBlog, loadBlogError);
 }
 
@@ -20,11 +20,14 @@ function populateRecent () {
 	blogs.forEach( function (blog, index) {
 		var a = document.createElement ('a');
 		a.innerHTML = blog.title;
-		a.onclick = function() { loadBlog (index); };
+		a.href = "#/" + blog.file;
+		a.onclick = function() { loadBlog (blog.file); };
 		recent.appendChild (a);
 	});
 }
 
-populateRecent();
-loadBlog(0);
-
+(function () {
+	var fileName = window.location.hash.split('/')[1] || blogs[0].file;
+	populateRecent();
+	loadBlog (fileName);
+})();

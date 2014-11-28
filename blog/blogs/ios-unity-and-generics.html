@@ -1,0 +1,76 @@
+
+<style>
+	.code {
+		position: relative;
+		padding-left: 26px;
+	}
+
+	.code-good {
+		background-color: #f0fff0;
+	}
+	.code-good:before {
+		content: "✓";
+		position: absolute;
+		top: 7px; left: 7px;
+		color: green;
+	}
+
+	.code-bad {
+		background-color: #fff0f0;
+	}
+	.code-bad:before {
+		content: "✗";
+		position: absolute;
+		top: 7px; left: 7px;
+		color: red;
+	}
+</style>
+
+
+<h2>IOS, Unity, and C# Generics</h2>
+
+<p>
+	If you plan on deploying your Unity games to IOS then you should not
+	use Generics. When unity converts your C# code to Objective C, IOS byte
+	code or whatever else it is doing, the generics don't always work the
+	way that they do in the editor or
+	in Java (Android).  Even worse, the errors seem to get compiled, but
+	then just fail once it's been pushed to the device.  For me the device
+	just seemed to freeze on the splash screen.  The generics seem to work
+	with built in Unity objects, but not with custom objects that you make 
+	yourself.  For instance:
+</p>
+
+<code class="code code-good">List&lt;Vector2&gt; l = new List&lt;Vector2&gt; ();
+</code>
+
+<code class="code code-good">List&lt;CustomObject&gt; l = new List&lt;CustomObject&gt; ();
+</code>
+
+<code class="code code-good">public class GenericObject &lt;T&gt; {
+	// ...
+}
+GenericObject&lt;Vector2&gt; o = new GenericObject&lt;Vector2&gt; ();
+</code>
+
+<code class="code code-bad">public class GenericObject &lt;T&gt; {
+	// ...
+}
+GenericObject&lt;CustomObject&gt; o = new GenericObject&lt;CustomObject&gt; ();
+</code>
+
+<p>
+	As you can see the only time that it is an issue is when you are passing
+	classes that you created into the generic spot of a different class that
+	you created.  If you are making a class that takes in generic object types
+	like a custom stack, queue, graph, factory, etc., then you will need to
+	make sure that you are only passing it standard C# or UnityEngine objects.
+	If you need to make a factory for custom objects then you need to do it the
+	old fasion way by casting the appropriate type of object.
+<p>
+
+<code class="code code-good">public class Stack {
+	public Object pop() { /* ... */ }
+}
+(SomeObject) stack.pop()
+</code>
