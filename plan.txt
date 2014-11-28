@@ -2,12 +2,12 @@
 Tech to use
 --------------------
 
-Angular-esque framework
-	Ember
-	Knockout
-	Handlebars
-
-Grunt or NPM for builds
+Link on hover animation
+Pull data out of the blogs array and have a standard header per blog.
+	Then do quirky animations and stuff on the blog header.
+Main Page
+	Have themes with light effects that can work well in the background.
+		Rain
 
 
 
